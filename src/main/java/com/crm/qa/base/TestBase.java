@@ -4,7 +4,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,16 +12,16 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase
 {
-    static WebDriver driver;
-    static Properties prop;
-    String projectPath= System.getProperty("user.dir");
+    public static WebDriver driver;
+    public static Properties prop;
+    public String projectPath= System.getProperty("user.dir");
 
     public TestBase()
     {
         try
         {
             prop=new Properties();
-            FileInputStream ip=new FileInputStream(projectPath + "/src/main/java/com.crm.qa.config/config.properties");
+            FileInputStream ip=new FileInputStream(projectPath + "/src/main/java/com/crm/qa/config/config.properties");
             prop.load(ip);
         }
         catch(FileNotFoundException e)
@@ -54,6 +53,5 @@ public class TestBase
         driver.manage().timeouts().implicitlyWait(TestUtils.IMPLICIT_WAIT,TimeUnit.SECONDS);
         driver.get(prop.getProperty("url"));
     }
-
 
 }

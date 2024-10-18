@@ -1,5 +1,7 @@
 package com.crm.qa.pages;
 
-public class DealsPage
+import com.crm.qa.base.TestBase;
+
+public class DealsPage extends TestBase
 {
 }
