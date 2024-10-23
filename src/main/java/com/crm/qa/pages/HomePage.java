@@ -19,10 +19,10 @@ public class HomePage extends TestBase
     @FindBy(xpath="//a[contains(text(),'Tasks')]")
     WebElement TasksLink;
 
-public HomePage()
-{
-    PageFactory.initElements(driver,this);
-}
+    public HomePage()
+    {
+        PageFactory.initElements(driver,this);
+    }
 
     //methods
     public String verifyHomepageTitle()

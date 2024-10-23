@@ -36,6 +36,7 @@ public class HomePageTest extends TestBase
         loginpage=new LoginPage();
         homepage=loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
     }
+
     @Test(priority = 1)
     public void verifyHomePageTitleTest()
     {
@@ -56,8 +57,6 @@ public class HomePageTest extends TestBase
     testUtil.switchToFrame();
     contactspage=homepage.clickOnContactsLink();
     }
-
-
 
     @AfterMethod
     public void tearDown()
