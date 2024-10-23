@@ -16,7 +16,6 @@ HomePage homepage;
 ContactsPage contactsPage;
 TestUtils testUtil;
 
-
     public ContactsPageTest()
     {
         super();
@@ -43,14 +42,21 @@ TestUtils testUtil;
     @Test(priority = 2)
     public void selectSingleContactsTest()
     {
-       contactsPage.selectContacts("aaaaaest test");
+       contactsPage.selectContacts("Aamy Tom");
     }
 
     @Test(priority = 3)
     public void selectMultipleContactsTest()
     {
-        contactsPage.selectContacts("aaaaaest test");
-        contactsPage.selectContacts("aaaabest test test");
+        contactsPage.selectContacts("Aamy Tom");
+        contactsPage.selectContacts("AFname1 ALname1");
+    }
+
+    @Test
+    public void validateCreateNewContact() throws InterruptedException
+    {
+        homepage.clickOnNewContactLink();
+        contactsPage.createNewContact("Mr.","0Test1","0Test1","0Company1");
     }
 
     @AfterMethod
@@ -58,5 +64,4 @@ TestUtils testUtil;
     {
         driver.quit();
     }
-
 }

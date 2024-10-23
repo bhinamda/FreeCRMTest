@@ -16,12 +16,10 @@ public class HomePageTest extends TestBase
     TestUtils testUtil;
     ContactsPage contactspage;
 
-
     public HomePageTest()
     {
         super();
     }
-
 //    Test cases should be separated ie: independent of each other
 //    before each test case, launch the browser and  login
 //    Test-execute test case
