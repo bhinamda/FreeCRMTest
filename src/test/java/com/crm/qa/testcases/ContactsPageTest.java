@@ -4,9 +4,12 @@ import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.util.TestUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class ContactsPageTest extends TestBase
@@ -15,6 +18,7 @@ LoginPage loginpage;
 HomePage homepage;
 ContactsPage contactsPage;
 TestUtils testUtil;
+String sheetName="Contacts";
 
     public ContactsPageTest()
     {
@@ -52,11 +56,22 @@ TestUtils testUtil;
         contactsPage.selectContacts("AFname1 ALname1");
     }
 
-    @Test
-    public void validateCreateNewContact() throws InterruptedException
+    @DataProvider
+    public Object[][] getCRMTestData()
+    {
+       Object[][] data=TestUtils.getTestData(sheetName);
+       return data;
+    }
+
+    @Test(priority = 4,dataProvider ="getCRMTestData")
+    public void validateCreateNewContact(String title,String firstname,String lastname,String company) throws InterruptedException
     {
         homepage.clickOnNewContactLink();
-        contactsPage.createNewContact("Mr.","0Test1","0Test1","0Company1");
+        contactsPage.createNewContact(title,firstname,lastname,company);
+        //Assertion
+        homepage.clickOnNewContactLink();
+        WebElement Newcontact=driver.findElement(By.name("01TestAutoFname 01TestAutoFname"));
+        Assert.assertTrue(Newcontact.isDisplayed());
     }
 
     @AfterMethod

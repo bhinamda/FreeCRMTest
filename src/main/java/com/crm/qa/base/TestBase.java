@@ -14,7 +14,7 @@ public class TestBase
 {
     public static WebDriver driver;
     public static Properties prop;
-    public String projectPath= System.getProperty("user.dir");
+    public static String projectPath= System.getProperty("user.dir");
 
     public TestBase()
     {

@@ -3,15 +3,18 @@ import com.crm.qa.base.TestBase;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends TestBase
 {
     @FindBy(xpath="//td[contains(text(),'User: Gagan Khanna')]")
+    @CacheLookup
     WebElement usernameLabel;
 
     @FindBy(xpath="//a[contains(text(),'Contacts')]")
+    @CacheLookup
     WebElement contactsLink;
 
     @FindBy(xpath="//a[contains(text(),'Deals')]")
@@ -21,6 +24,7 @@ public class HomePage extends TestBase
     WebElement TasksLink;
 
     @FindBy(xpath="//a[contains(text(),'New Contact')]")
+    @CacheLookup
     WebElement newContactLink;
 
     public HomePage()
