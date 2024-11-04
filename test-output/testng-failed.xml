@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [FreeCRMTestSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="FreeCRMTest(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.ContactsPageTest">
+      <class name="com.crm.qa.testcases.LoginPageTest">
         <methods>
-          <include name="validateCreateNewContact"/>
-          <include name="tearDown"/>
           <include name="setup"/>
+          <include name="loginTest"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.ContactsPageTest -->
+      </class> <!-- com.crm.qa.testcases.LoginPageTest -->
     </classes>
   </test> <!-- FreeCRMTest(failed) -->
-</suite> <!-- Failed suite [Default Suite] -->
+</suite> <!-- Failed suite [FreeCRMTestSuite] -->

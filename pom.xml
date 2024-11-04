@@ -23,6 +23,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v130</artifactId>
+            <version>4.16.1</version> <!-- or latest -->
+        </dependency>
+
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.8.0</version>
@@ -32,7 +38,7 @@
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
+                <artifactId>webdrivermanager</artifactId>
             <version>5.9.2</version>
         </dependency>
 
@@ -60,6 +66,17 @@
                 <artifactId>commons-compress</artifactId>
                 <version>1.21</version>
             </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.30</version>
+        </dependency>
 
 
     </dependencies>
