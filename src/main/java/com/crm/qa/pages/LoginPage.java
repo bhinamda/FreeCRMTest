@@ -17,7 +17,7 @@ public class LoginPage extends TestBase
     @FindBy(xpath="//input[@type='submit' and @value='Login']")
     WebElement loginBtn;
 
-    @FindBy(name="//*[text()='Sign Up']")
+    @FindBy(xpath="//*[text()='Sign Up']")
     WebElement SignUpBtn;
 
     @FindBy(xpath="//img[@class='img-responsive']")

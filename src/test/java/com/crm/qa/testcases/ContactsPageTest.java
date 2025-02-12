@@ -46,14 +46,14 @@ String sheetName="Contacts";
     @Test(priority = 2)
     public void selectSingleContactsTest()
     {
-       contactsPage.selectContacts("Aamy Tom");
+       contactsPage.selectContacts("Aarav Sharma");
     }
 
     @Test(priority = 3)
     public void selectMultipleContactsTest()
     {
-        contactsPage.selectContacts("Aamy Tom");
-        contactsPage.selectContacts("AFname1 ALname1");
+        contactsPage.selectContacts("Aakash Nagre");
+        contactsPage.selectContacts("aa bb");
     }
 
     @DataProvider
@@ -69,9 +69,10 @@ String sheetName="Contacts";
         homepage.clickOnNewContactLink();
         contactsPage.createNewContact(title,firstname,lastname,company);
         //Assertion
-        homepage.clickOnNewContactLink();
-        WebElement Newcontact=driver.findElement(By.name("01TestAutoFname 01TestAutoFname"));
-        Assert.assertTrue(Newcontact.isDisplayed());
+        homepage.clickOnContactsLink();
+        //WebElement checkContact=driver.findElement(By.name("0TestAutoFname 0TestAutoLname"));
+        WebElement checkContact=driver.findElement(By.xpath("//table//td//a[contains(text(),'0TestAutoFname 0TestAutoLname')]"));
+        Assert.assertTrue(checkContact.isDisplayed(), "No such record present");
     }
 
     @AfterMethod

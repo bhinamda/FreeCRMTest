@@ -16,29 +16,22 @@ public class TestUtils extends TestBase
     public static long PAGE_LOAD_TIMEOUT = 20;
     public static long IMPLICIT_WAIT = 10;
 
-        //To read data from excel
+    //To read data from excel
     public static String TESTDATA_SHEET_PATH = projectPath + "/src/main/java/com/crm/qa/testdata/FreeCRMTestData.xlsx";
     static Workbook book;
     static Sheet sheet;
 
-    public static Object[][] getTestData(String sheetName)
-    {
+    public static Object[][] getTestData(String sheetName) {
 
         FileInputStream file = null;
-        try
-        {
+        try {
             file = new FileInputStream(TESTDATA_SHEET_PATH);
-        }
-        catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        try
-        {
+        try {
             book = WorkbookFactory.create(file);
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

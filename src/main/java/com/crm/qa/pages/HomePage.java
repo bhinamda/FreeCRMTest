@@ -1,5 +1,6 @@
 package com.crm.qa.pages;
 import com.crm.qa.base.TestBase;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,7 +15,6 @@ public class HomePage extends TestBase
     WebElement usernameLabel;
 
     @FindBy(xpath="//a[contains(text(),'Contacts')]")
-    @CacheLookup
     WebElement contactsLink;
 
     @FindBy(xpath="//a[contains(text(),'Deals')]")
@@ -24,7 +24,6 @@ public class HomePage extends TestBase
     WebElement TasksLink;
 
     @FindBy(xpath="//a[contains(text(),'New Contact')]")
-    @CacheLookup
     WebElement newContactLink;
 
     public HomePage()
@@ -61,7 +60,7 @@ public class HomePage extends TestBase
         return new TasksPage();
     }
 
-    public void clickOnNewContactLink()
+    public void clickOnNewContactLink() throws InterruptedException
     {
         Actions action=new Actions(driver);
         action.moveToElement(contactsLink).build().perform();

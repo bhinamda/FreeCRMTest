@@ -22,6 +22,7 @@ public class TestBase
 
     public TestBase()
     {
+        //add code to read the properties
         try
         {
             prop=new Properties();
@@ -40,6 +41,7 @@ public class TestBase
 
     public static void initialization()
     {
+        //initialize the drivers
         String browserName=prop.getProperty("browser");
         if(browserName.equals("chrome"))
         {
