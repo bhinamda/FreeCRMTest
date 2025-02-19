@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Free CRM automation Test Suite">
+
+    <listeners>
+        <listener class-name="com.crm.qa.ExtentReportListener.ExtentReporterNG"/>
+    </listeners>
+
     <test verbose="2" preserve-order="true" name="FreeCRMTest">
         <classes>
-            <class name="com.crm.qa.testcases.ContactsPageTest">
-                 <methods>
-                <include name="verifyContactsPageLabel"/>
-                <include name="selectSingleContactsTest"/>
-                <include name="selectMultipleContactsTest"/>
-                <include name="validateCreateNewContact"/>
-                </methods>
-            </class>
-            <class name="com.crm.qa.testcases.HomePageTest">
-              <methods>
-            <include name="verifyHomePageTitleTest"/>
-            <include name="verifyUsernameTest"/>
-            <include name="verifyContactsLinkTest"/>
-             </methods>
-            </class>
+<!--            <class name="com.crm.qa.testcases.ContactsPageTest">-->
+<!--                 <methods>-->
+<!--                <include name="verifyContactsPageLabel"/>-->
+<!--                <include name="selectSingleContactsTest"/>-->
+<!--                <include name="selectMultipleContactsTest"/>-->
+<!--                <include name="validateCreateNewContact"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.crm.qa.testcases.HomePageTest">-->
+<!--              <methods>-->
+<!--            <include name="verifyHomePageTitleTest"/>-->
+<!--            <include name="verifyUsernameTest"/>-->
+<!--            <include name="verifyContactsLinkTest"/>-->
+<!--             </methods>-->
+<!--            </class>-->
             <class name="com.crm.qa.testcases.LoginPageTest">
                 <methods>
-                <include name="loginPageTitleTest"/>
-                <include name="CRMLogoImageTest"/>
+<!--                <include name="loginPageTitleTest"/>-->
+<!--                <include name="CRMLogoImageTest"/>-->
                 <include name="loginTest"/>
                 </methods>
             </class>

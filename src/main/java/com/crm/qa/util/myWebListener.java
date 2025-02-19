@@ -31,14 +31,18 @@ public class myWebListener extends TestBase implements WebDriverListener
     public void afterGetTitle(WebDriver driver, String result) {
     }
 
-    public void onError(Object target, Method method, Object[] args, InvocationTargetException e) {
+    public void onError(Object target, Method method, Object[] args, InvocationTargetException e)
+    {
         System.out.println("An error occurred while invoking method: " + method.getName());
         System.out.println("Error message: " + e.getMessage());
-        try {
+        try
+        {
             // Call the screenshot method when an error occurs
             TestUtils.takeScreenshotAtEndOfTest();
             System.out.println("Screenshot taken for error: " + e.getMessage());
-        } catch (IOException ioException) {
+        }
+        catch (IOException ioException)
+        {
             ioException.printStackTrace();
         }
     }
